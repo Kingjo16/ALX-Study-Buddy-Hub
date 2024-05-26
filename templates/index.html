@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ALX Study Buddy Hub
+{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Empowering Software Engineering Students</h1>
+      <h2>Through Collaborative Learning</h2>
+      <a href="/signup" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Study Groups</h3>
+      <p>Create and join study groups to collaborate with fellow ALX students, share resources, and discuss topics.</p>
+    </div>
+    <div class="feature">
+      <h3>Discussion Forums</h3>
+      <p>Engage in threaded conversations to ask questions, seek guidance, and exchange knowledge with others.</p>
+    </div>
+    <div class="feature">
+      <h3>Resource Sharing</h3>
+      <p>Upload and access shared resources such as PDFs, code snippets, and tutorials to enhance your learning.</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block nav_links %}
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/signin">Sign In</a></li>
+    <li><a href="/signup">Sign Up</a></li>
+  </ul>
+{% endblock %}
