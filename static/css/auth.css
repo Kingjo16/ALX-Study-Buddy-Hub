@@ -1,0 +1,89 @@
+body{
+  background-image: url('/static/img/image1.png');
+}
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-signin {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-signin:hover {
+  background-color: #555;
+}
+
+.btn-signup {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-signup:hover {
+  background-color: #555;
+}
+
+.signup-link,
+.extra-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link a,
+.extra-info a {
+  color: #333;
+  text-decoration: none;
+}
+
+.signup-link a:hover,
+.extra-info a:hover {
+  text-decoration: underline;
+}
+

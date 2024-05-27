@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>
-    {% block title %}
-    ALX Study Buddy Hub
-    {% endblock %}
-  </title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
-</head>
+  {% block head %}
+  <head>
+    <title>ALX Study Buddy Hub</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/basicUI.css') }}">
+  </head>
+  {% endblock %}
 <body>
+  {% block header %}
   <header>
     <nav>
       <div class="logo">
@@ -21,13 +20,15 @@
       </ul>
     </nav>
   </header>
-
+  {% endblock %}
   <main>
     {% block content %}{% endblock %}
   </main>
 
+  {% block footer %}
   <footer>
     <p>&copy; 2024 ALX Study Buddy Hub. All rights reserved.</p>
   </footer>
+  {% endblock %}
 </body>
 </html>
