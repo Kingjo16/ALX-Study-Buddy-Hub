@@ -3,9 +3,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('static/img/image1.png');
+  background-image: url('/static/img/image1.png');
   background-size: cover;
-  background-position: center;
 }
 
 h1, h2, h3 {
@@ -52,7 +51,7 @@ header {
 
 /* Hero Section Styles */
 .hero {
-  background-image: url('/static/img/image1.png');
+  background-image: url('static/img/image1.png');
   background-size: cover;
   background-position: center;
   padding: 100px 0;
@@ -86,7 +85,7 @@ header {
 }
 
 .btn:hover {
-  background-color: #ddd;
+  background-color: darkgreen;
 }
 
 /* Features Section Styles */
@@ -100,20 +99,16 @@ header {
   width: 30%;
   vertical-align: top;
   margin-bottom: 30px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-.feature:hover {
-  display: inline-block;
-  width: 35%;
-  vertical-align: top;
-  margin-bottom: 50px;
-  padding: 30px;
+  padding: 70px 0;
   border: 1px solid #ccc;
   border-radius: 10px;
+  justify-content: space-between;
   box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+.feature:hover {
+  transform: scale(1.1);
+  background-color: darkgreen;
 }
 
 .feature h3 {
@@ -131,4 +126,30 @@ footer {
   padding: 20px;
   color: #fff;
   text-align: center;
+}
+
+/* style.css */
+
+/* Example animation for the hero section */
+.animate .hero-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate .hero-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Example animation for the features section */
+.animate .feature {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate .feature.animate {
+  opacity: 1;
+  transform: translateY(0);
 }

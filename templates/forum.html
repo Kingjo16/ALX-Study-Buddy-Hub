@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ALX Study Buddy Hub - Forum</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .container {
+          width: 80%;
+          margin: auto;
+          overflow: hidden;  
+        }
+        .forum-section {
+          background: lightgray;
+          padding: 20px;
+          margin: 20px 0;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .forum-title {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        .forum-post {
+          border-bottom: 1px solid #ddd;
+          padding: 10px 0;
+        }
+        .forum-post:last-child {
+          border-bottom: none;
+        }
+        .post-author {
+          font-weight: bold;
+        }
+        .post-time {
+          color: #888;
+          font-size: 14px;
+        }
+        .post-content {
+          margin-top: 5px;
+        }
+        .reply-button {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          border-radius: 3px;
+        }
+        .reply-button:hover {
+          background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+              <h1>ALX Study Buddy Hub</h1>
+          </div>
+          <ul class="nav-right">
+            <li class="nav-right"><a href="/signout">Sign Out</a></li>
+          </ul>
+          <ul class="nav-links">
+            <li class="nav-item"><a href="Dashboard.html">Dashboard</a></li>
+            <li class="nav-item"><a href="groups.html">Study Groups</a></li>
+            <li class="nav-item"><a href="create_group.html">Create Groups</a></li>
+            <li class="nav-item"><a href="/notifications">Notifications</a></li>
+            <li class="nav-item" id="main-page"><a href="#">Forum</a></li>
+          </ul>
+        </nav>
+      </header>
+    <div class="container">
+        <div class="forum-section">
+            <div class="forum-title">General Discussion</div>
+            <div class="forum-post">
+                <div class="post-author">John Doe</div>
+                <div class="post-time">Posted on May 31, 2024</div>
+                <div class="post-content">This is the first post in the general discussion forum.</div>
+                <button class="reply-button">Reply</button>
+            </div>
+            <div class="forum-post">
+                <div class="post-author">Jane Smith</div>
+                <div class="post-time">Posted on May 31, 2024</div>
+                <div class="post-content">This is another post in the general discussion forum.</div>
+                <button class="reply-button">Reply</button>
+            </div>
+        </div>
+    </div>
+</body>
+  <footer>
+    <p>&copy; 2024 ALX Study Buddy Hub. All rights reserved.</p>
+  </footer>
+</html>

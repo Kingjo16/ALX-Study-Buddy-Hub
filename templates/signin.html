@@ -17,18 +17,17 @@
   <div class="container">
     <div class="content">
       <h2>Sign In</h2>
-      <form>
+      <form method="POST" action="{{ url_for('auth.signin') }}">
         <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
         </div>
-
         <div class="form-group">
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required>
         </div>
-
-        <input type="submit" value="Sign In" class="btn-signin">
+        
+        <input type="submit" value="Sign IN" class="btn-signin">
       </form>
       <p class="signup-link">Don't have an account? <a href="/signup">Register here</a></p>
       <p class="extra-info">Forgot your password? <a href="password_reset.html">Reset it here</a></p>
