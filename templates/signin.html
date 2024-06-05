@@ -14,27 +14,56 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container">
-    <div class="content">
-      <h2>Sign In</h2>
-      <form method="POST" action="{{ url_for('auth.signin') }}">
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    <div class="content-section">
+        <form method="POST" action="{{ url_for('auth.login') }}">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <h2>Log In</h2>
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn-signin") }}
+            </div>
+            <small class="text-muted ml-2">
+                <a href="#">Forgot Password?</a>
+            </small>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Need An Account? <a class="ml-2" href="{{ url_for('auth.regisreation') }}">Sign Up Now</a>
+            </small>
         </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-        </div>
-        
-        <input type="submit" value="Sign IN" class="btn-signin">
-      </form>
-      <p class="signup-link">Don't have an account? <a href="/signup">Register here</a></p>
-      <p class="extra-info">Forgot your password? <a href="password_reset.html">Reset it here</a></p>
-      <p class="extra-info">Need help? Contact our support team at <a href="mailto:support@example.com">support@example.com</a></p>
     </div>
-  </div>
-{% endblock %}
+{% endblock content %}
 {% block footer %}
 
 {% endblock %}

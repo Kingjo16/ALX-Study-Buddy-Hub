@@ -1,54 +1,31 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, logout_user, login_required, current_user
+from flask import Blueprint, render_template, flash, redirect, url_for
+from models.user import RegistrationForm, LoginForm
+from flask_login import login_user, logout_user, login_required
 
 
-auth_bp = Blueprint('auth', __name__)
+auth = Blueprint('auth', __name__)
 
-@auth_bp.route('/signin', methods=['GET', 'POST'])
-def signin():
-    from models.user import User
-    from app import db
+@auth.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
-    
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
-        user = User.query.filter_by(email=email).first()
-        if user and check_password_hash(user.password, password):
-            login_user(user)
-            return redirect(url_for('index'))
+@auth.route('/signin', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data == 'petrosworku19@gmail.com' and form.password.data == 'book9199':
+            flash('You have been logged in!', 'success')
+            return redirect(url_for('auth.dashboard'))
         else:
-            flash('Invalid email or password')
-    return render_template('signin.html')
+            flash('Login Unsuccessful. Please check email and password', 'danger')
+    return render_template('signin.html', form=form)
 
-@auth_bp.route('/signup', methods=['GET', 'POST'])
-def signup():
-    
-    from models.user import User
-    from app import db
-    
-    if request.method == 'POST':
-        first_name = request.form.get('first_name')
-        last_name = request.form.get('last_name')
-        email = request.form.get('email')
-        password = request.form.get('password')
-        confirm_password = request.form.get('confirm_password')
 
-        if password != confirm_password:
-            flash('Passwords do not match')
-            return redirect(url_for('auth.signup'))
+@auth.route('/signup', methods=['GET', 'POST'])
+def regisreation():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.firstname.data}!', 'success')
+        return redirect(url_for('auth.dashboard'))
+    return render_template('signup.html', form=form)
 
-        hashed_password = generate_password_hash(password, method='sha256')
-        new_user = User(first_name=first_name, last_name=last_name, email=email, password=hashed_password)
-        db.session.add(new_user)
-        db.session.commit()
-        login_user(new_user)
-        return redirect(url_for('index'))
-    return render_template('signup.html')
-
-@auth_bp.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('auth.signin'))

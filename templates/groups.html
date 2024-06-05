@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Study Groups | ALX Study Buddy Hub</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block header %}
+<header>
+  <nav>
+    <div class="logo">
+      <h1>ALX Study Buddy Hub</h1>
+    </div>
+    <ul class="nav-right">
+      <li class="nav-right"><a href="/signout">Sign Out</a></li>
+    </ul>
+    <ul class="nav-links">
+      <li class="nav-item" id="main-page"><a href="#">Dashboard</a></li>
+      <li class="nav-item"><a href="groups.html">Study Groups</a></li>
+      <li class="nav-item"><a href="create_group.html">Create Groups</a></li>
+      <li class="nav-item"><a href="forum.html">Forum</a></li>
+    </ul>
+  </nav>
+</header>
+{% endblock %}
+{% block content %}
+<section class="group-list">
+  <h2>Study Groups</h2>
+  <ul>
+    {% for group in groups %}
+    <li><a href="/group/{{ group.id }}">{{ group.name }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

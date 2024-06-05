@@ -36,23 +36,6 @@ input[type="password"] {
   border-radius: 5px;
 }
 
-.btn-signin {
-  display: block;
-  width: 100%;
-  padding: 20px;
-  background-color: #333;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.btn-signin:hover {
-  background-color: #555;
-}
-
 .btn-signup {
   display: block;
   width: 100%;
@@ -87,3 +70,55 @@ input[type="password"] {
   text-decoration: underline;
 }
 
+/* Styles for the content section */
+.content-section {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+/* Styles for form labels */
+.form-control-label {
+  font-weight: bold;
+}
+
+/* Styles for form inputs */
+.form-control {
+  margin-bottom: 15px;
+}
+
+/* Styles for the submit button */
+.btn-signin {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-signin:hover {
+  background-color: #555;
+}
+
+/* Styles for the "Forgot Password?" link */
+.text-muted a {
+  color: gray;
+  text-decoration: none;
+}
+
+.text-muted a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the "Need An Account?" section */
+.border-top {
+  margin-top: 20px;
+  padding-top: 10px;
+}
