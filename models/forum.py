@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired
 from flask import Blueprint
 from flask_sqlalchemy import SQLAlchemy
 
-forums = Blueprint('forums', __name__)
+forum = Blueprint('forum', __name__)
 
 db = SQLAlchemy()
 

@@ -3,8 +3,8 @@ from routes.auth import auth
 from routes.groups import group
 from models.user import user
 from models.group import groups
-from models.forum import forums
-from models.forum import Post
+from models.forum import forum
+from routes.forums import forums
 
 app = Flask(__name__)
 
@@ -17,6 +17,7 @@ app.register_blueprint(user)
 app.register_blueprint(group)
 app.register_blueprint(groups)
 app.register_blueprint(forums)
+app.register_blueprint(forum)
 
 
 

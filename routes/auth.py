@@ -29,3 +29,7 @@ def regisreation():
         return redirect(url_for('auth.dashboard'))
     return render_template('signup.html', form=form)
 
+@auth.route('/signout', methods=['GET', 'POST'])
+def signout():
+    return render_template('index.html')
+    

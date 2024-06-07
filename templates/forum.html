@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-  <title>Dashboard | ALX Study Buddy Hub</title>
+  <title>Forum | ALX Study Buddy Hub</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
@@ -15,10 +15,10 @@
       <li class="nav-right"><a href="/signout">Sign Out</a></li>
     </ul>
     <ul class="nav-links">
-      <li class="nav-item" id="main-page"><a href="/groups">Posts</a></li>
-      <li class="nav-item"><a href="/">Create Post</a></li>
-      <li class="nav-item"><a href="/">Delete Post</a></li>
-      <li class="nav-item"><a href="/">My Posts</a></li>
+      <li class="nav-item" id="main-page"><a href="/forums">Posts</a></li>
+      <li class="nav-item"><a href="#">Create Post</a></li>
+      <li class="nav-item"><a href="#">Delete Post</a></li>
+      <li class="nav-item"><a href="#">My Posts</a></li>
     </ul>
   </nav>
 </header>
@@ -27,8 +27,6 @@
 <section class="group-list">
   <h2>Posts</h2>
   <ul>
-    {% for post in posts %}
-    <li><a href="/post/{{ post.id }}">{{ post.title }}</a></li>
-    {% endfor %}
+    
   </ul>
 {% endblock %}

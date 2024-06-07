@@ -5,9 +5,9 @@ group = Blueprint('group', __name__)
 
 @group.route('/groups')
 def groups():
-    groups = Group.query.all()
-    form = GroupForm()
-    return render_template('groups.html', groups=groups, form=form)
+    '''groups = Group.query.all()
+    form = GroupForm()'''
+    return render_template('groups.html')
 
 @group.route('/create_groups', methods=['GET', 'POST'])
 def create_group():
@@ -22,8 +22,3 @@ def create_group():
     else:                   
         return render_template('create_group.html', form=form)
 
-
-"""@group_bp.route('/group/<int:group_id>')
-def view_group(group_id):
-    group = Group.query.get(group_id)
-    return render_template('view_group.html', group=group)"""
