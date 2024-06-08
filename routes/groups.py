@@ -13,7 +13,7 @@ def groups():
 def create_group():
     form = GroupForm()
     if form.validate_on_submit():
-        new_group = Group(name=form.title.data, description=form.description.data)
+        new_group = GroupForm(name=form.title.data, description=form.description.data)
         db.session.add(new_group)
         db.session.commit()
         flash('Your group has been created!', 'success')

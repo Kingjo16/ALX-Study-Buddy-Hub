@@ -19,3 +19,10 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class CommentForm(FlaskForm):
+    comment = TextAreaField('Content', validators=[DataRequired()])
+    submit = SubmitField('Comment')
+    def __init__(self, post_id):
+        self.post_id = post_id
+        

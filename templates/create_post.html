@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Forum | ALX Study Buddy Hub</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block header %}
+<header>
+  <nav>
+    <div class="logo">
+      <h1>ALX Study Buddy Hub</h1>
+    </div>
+    <ul class="nav-right">
+      <li class="nav-right"><a href="/signout">Sign Out</a></li>
+    </ul>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="nav-item"><a href="/forums">Posts</a></li>
+      <li class="nav-item" id="main-page"><a href="#">Create Post</a></li>
+      <li class="nav-item"><a href="#">Delete Post</a></li>
+      <li class="nav-item"><a href="#">My Posts</a></li>
+    </ul>
+  </nav>
+</header>
+{% endblock %}
+{% block content %}
+  <div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Create Posts</legend>
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }}
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.content.label(class="form-control-label") }}
+                {% if form.content.errors %}
+                    {{ form.content(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.content(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn-creategroup") }}
+        </div>
+    </form>
+  </div>
+{% endblock %}
