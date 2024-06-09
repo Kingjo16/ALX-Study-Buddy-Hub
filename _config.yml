@@ -1,0 +1,6 @@
+title: ALX Study Buddy Hub
+description: Connect. Learn. Succeed.
+theme: minima
+plugins:
+  - jekyll-readme-index
+
