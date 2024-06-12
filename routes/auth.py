@@ -47,8 +47,4 @@ def registration():
 @login_required
 def signout():
     logout_user()
-<<<<<<< HEAD
     return redirect(url_for('auth.login'))
-=======
-    return redirect(url_for('auth.login'))
->>>>>>> 97cb372 (none)
