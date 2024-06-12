@@ -2,6 +2,7 @@
 
 import os
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 from routes.auth import auth
 from routes.groups import group
 from models.user import user
@@ -12,7 +13,10 @@ from routes.forums import forums
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_secret_key')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://study_user:password@localhost/study_buddy_hub'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db.init_app(app)
 
 # Register the auth routes
 app.register_blueprint(auth)
