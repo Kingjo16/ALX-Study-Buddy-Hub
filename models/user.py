@@ -5,10 +5,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
-
+from models import db
 
 user = Blueprint('user', __name__)
-db = SQLAlchemy()
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
