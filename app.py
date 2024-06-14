@@ -15,7 +15,7 @@ from routes.forums import forums
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_secret_key')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://study_user:password@localhost/study_buddy_hub'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://study_user:new_password@localhost/study_buddy_hub'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
